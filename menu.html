@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="ru" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bird — Меню</title>
+  <meta name="description" content="Меню кофейни Bird: классика, сезонные напитки, десерты и завтраки." />
+  <meta name="theme-color" content="#5f6a4f" />
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="img/icon-192.png" sizes="192x192" />
+  <link rel="apple-touch-icon" href="img/icon-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/menu.css" />
+</head>
+<body>
+  <a href="#mainContent" class="skip-link">Перейти к содержимому</a>
+  <header class="site-header">
+    <div class="container header__inner">
+      <a class="logo" href="index.html">BIRD</a>
+      <button type="button" class="burger" id="menuToggle" aria-label="Открыть навигацию" aria-controls="siteNav" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" id="siteNav" aria-label="Основная навигация">
+        <a href="index.html" class="nav-link">Главная</a>
+        <a href="menu.html" class="nav-link is-active" aria-current="page">Меню</a>
+        <a href="cart.html" class="nav-link">Корзина <span id="cartCount" class="badge">0</span></a>
+        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Переключить тему" aria-pressed="false">
+          <span class="theme-toggle__icon" aria-hidden="true"></span>
+        </button>
+
+      </nav>
+    </div>
+  </header>
+  <div class="menu-overlay" id="menuOverlay" aria-hidden="true"></div>
+
+  <main id="mainContent" class="container menu-page">
+    <a href="index.html" class="back-btn">← На главную</a>
+    <h1>Меню</h1>
+
+    <!-- ФИЛЬТРЫ -->
+    <div class="filters" role="tablist" aria-label="Фильтры категорий">
+      <button type="button" class="filter is-active" data-filter="all" role="tab">Все</button>
+      <button type="button" class="filter" data-filter="drinks" role="tab">Напитки</button>
+      <button type="button" class="filter" data-filter="season" role="tab">Сезонное</button>
+      <button type="button" class="filter" data-filter="desserts" role="tab">Десерты</button>
+      <button type="button" class="filter" data-filter="breakfast" role="tab">Завтраки</button>
+    </div>
+
+    <!-- СЕТКА КАРТОЧЕК -->
+    <div class="grid" id="menuGrid">
+      <!-- ****** НАПИТКИ ****** -->
+      <article class="card" data-category="drinks" data-id="capuccino" data-name="Капучино" data-price="350">
+        <div class="slide" data-label="Капучино"><img src="img/kapuchino.jpg" width="652" height="717" loading="lazy" decoding="async" alt="Капучино"></div>
+        <div class="card__body">
+          <h3>Капучино — 350 ₽</h3>
+          <p class="muted">Классика на основе эспрессо с бархатной молочной пеной.</p>
+          <p class="small">Состав: эспрессо, молоко, молочная пена.</p>
+          <button class="btn add" type="button">Добавить в корзину</button>
+        </div>
+      </article>
+
+      <article class="card" data-category="drinks" data-id="macchiato" data-name="Макиато" data-price="300">
+        <div class="slide" data-label="Макиато"><img src="img/maciatto.jpg" width="1168" height="1202" loading="lazy" decoding="async" alt="Макиато"></div>
+        <div class="card__body">
+          <h3>Макиато — 300 ₽</h3>
+          <p class="muted">Эспрессо «помеченный» ложечкой пены — яркий вкус с мягким штрихом.</p>
+          <p class="small">Состав: эспрессо, немного молочной пены.</p>
+          <button class="btn add" type="button">Добавить в корзину</button>
+        </div>
+      </article>
+
+      <article class="card" data-category="drinks" data-id="espresso" data-name="Эспрессо" data-price="220">
+       <div class="slide" data-label="Эспрессо"><img src="img/espresso.jpg" width="572" height="628" loading="lazy" decoding="async" alt="Эспрессо"></div>
+        <div class="card__body">
+          <h3>Эспрессо — 220 ₽</h3>
+          <p class="muted">Насыщенный, концентрированный шот с чистым профилем вкуса.</p>
+          <p class="small">Состав: свежеприготовленный эспрессо.</p>
+          <button class="btn add" type="button">Добавить в корзину</button>
+        </div>
+      </article>
+
+      <article class="card" data-category="drinks" data-id="americano" data-name="Американо" data-price="250">
+        <div class="slide" data-label="Американо"><img src="img/americano.jpg" width="475" height="448" loading="lazy" decoding="async" alt="Американо"></div>
+        <div class="card__body">
+          <h3>Американо — 250 ₽</h3>
+          <p class="muted">Эспрессо, раскрытый горячей водой — мягче и длиннее по вкусу.</p>
+          <p class="small">Состав: эспрессо, горячая вода.</p>
+          <button class="btn add" type="button">Добавить в корзину</button>
+        </div>
+      </article>
+
+      <article class="card" data-category="drinks" data-id="flatwhite" data-name="Флэт уайт" data-price="370">
+      <div class="slide" data-label="Флэт уайт"><img src="img/flat white.jpg" width="807" height="1014" loading="lazy" decoding="async" alt="Флэт уайт"></div>
+        <div class="card__body">
+          <h3>Флэт уайт — 370 ₽</h3>
+          <p class="muted">Двойной эспрессо и шелковистая микро-пенка — плотный вкус без лишней сладости.</p>
+          <p class="small">Состав: двойной эспрессо, молоко.</p>
+          <button class="btn add" type="button">Добавить в корзину</button>
+        </div>
+      </article>
+
+      <article class="card" data-category="drinks" data-id="raf" data-name="Раф" data-price="390">
+        <div class="slide" data-label="Раф"><img src="img/raf.jpg" width="890" height="742" loading="lazy" decoding="async" alt="Раф"></div>
+        <div class="card__body">
+          <h3>Раф — 390 ₽</h3>
+          <p class="muted">Десертный кофейный напиток с нежной сливочной текстурой и ванильным оттенком.</p>
+          <p class="small">Состав: эспрессо, сливки, ванильный сахар.</p>
+          <button class="btn add" type="button">Добавить в корзину</button>
+        </div>
+      </article>
+
+      <article class="card" data-category="drinks" data-id="mocha" data-name="Мокко" data-price="400">
+        <div class="slide" data-label="Мокко"><img src="img/mokko.jpg" width="521" height="549" loading="lazy" decoding="async" alt="Мокко"></div>
+        <div class="card__body">
+          <h3>Мокко — 400 ₽</h3>
+          <p class="muted">Шоколадный акцент, сливочная текстура и бодрость эспрессо.</p>
+          <p class="small">Состав: эспрессо, какао/шоколадный сироп, молоко, взбитые сливки.</p>
+          <button class="btn add" type="button">Добавить в корзину</button>
+        </div>
+      </article>
+
+      <!-- ****** СЕЗОННОЕ ****** -->
+      <article class="card" data-category="season" data-id="spiced-chai-latte" data-name="Пряный чай латте" data-price="360">
+        <div class="slide" data-label="Пряный чай латте"><img src="img/pryni.jpg" width="1200" height="960" loading="lazy" decoding="async" alt="Пряный чай латте"></div>
+        <div class="card__body">
+          <h3>Пряный чай латте — 360 ₽</h3>
+          <p class="muted">Чёрный чай и специи (кардамон, корица, гвоздика) в мягком молочном облаке.</p>
+          <p class="small">Состав: заваренный чай, пряности, молоко, сироп по желанию.</p>
+          <button class="btn add" type="button">Добавить в корзину</button>
+        </div>
+      </article>
+
+      <article class="card" data-category="season" data-id="pumpkin-raf" data-name="Тыквенный раф" data-price="420">
+        <div class="slide" data-label="Тыквенный раф"><img src="img/tykva.jpg" width="856" height="777" loading="lazy" decoding="async" alt="Тыквенный раф"></div>
+        <div class="card__body">
+          <h3>Тыквенный раф — 420 ₽</h3>
+          <p class="muted">Осенний десерт в чашке: сливочная сладость и натуральное тыквенное пюре.</p>
+          <p class="small">Состав: эспрессо, сливки, тыквенное пюре, пряности, ваниль.</p>
+          <button class="btn add" type="button">Добавить в корзину</button>
+        </div>
+      </article>
+
+      <!-- ****** ДЕСЕРТЫ ****** -->
+      <article class="card" data-category="desserts" data-id="medovik" data-name="Медовик" data-price="320">
+        <div class="slide" data-label="Медовик"><img src="img/medovik.jpg" width="671" height="607" loading="lazy" decoding="async" alt="Медовик"></div>
+        <div class="card__body">
+          <h3>Медовик — 320 ₽</h3>
+          <p class="muted">Карамельные коржи и лёгкий сметанный крем — мягкая сладость классики.</p>
+          <p class="small">Состав: мёд, коржи, сметанный крем.</p>
+          <button class="btn add" type="button">Добавить в корзину</button>
+        </div>
+      </article>
+
+      <article class="card" data-category="desserts" data-id="napoleon" data-name="Наполеон" data-price="340">
+        <div class="slide" data-label="Наполеон"><img src="img/napoleon.jpg" width="675" height="755" loading="lazy" decoding="async" alt="Наполеон"></div>
+        <div class="card__body">
+          <h3>Наполеон — 340 ₽</h3>
+          <p class="muted">Воздушные слои слоёного теста и нежный заварной крем.</p>
+          <p class="small">Состав: слоёные коржи, заварной крем.</p>
+          <button class="btn add" type="button">Добавить в корзину</button>
+        </div>
+      </article>
+
+      <article class="card" data-category="desserts" data-id="cheesecake" data-name="Чизкейк Нью-Йорк" data-price="420">
+        <div class="slide" data-label="Чизкейк Нью-Йорк"><img src="img/chizcake.jpg" width="858" height="877" loading="lazy" decoding="async" alt="Чизкейк Нью-Йорк"></div>
+        <div class="card__body">
+          <h3>Чизкейк Нью-Йорк — 420 ₽</h3>
+          <p class="muted">Классический плотный чизкейк на хрустящем основании.</p>
+          <p class="small">Состав: сливочный сыр, сливки, печенье, ваниль.</p>
+          <button class="btn add" type="button">Добавить в корзину</button>
+        </div>
+      </article>
+
+      <article class="card" data-category="desserts" data-id="eclairs" data-name="Эклеры" data-price="260">
+        <div class="slide" data-label="Эклеры"><img src="img/ekler.jpg" width="694" height="614" loading="lazy" decoding="async" alt="Эклеры"></div>
+        <div class="card__body">
+          <h3>Эклеры — 260 ₽</h3>
+          <p class="muted">Лёгкое заварное тесто и крем внутри — идеальны к кофе.</p>
+          <p class="small">Состав: заварное тесто, крем, глазурь.</p>
+          <button class="btn add" type="button">Добавить в корзину</button>
+        </div>
+      </article>
+
+      <article class="card" data-category="desserts" data-id="profiteroles" data-name="Профитроли" data-price="250">
+       <div class="slide" data-label="Профитроли"><img src="img/profitroli.jpg" width="613" height="618" loading="lazy" decoding="async" alt="Профитроли"></div>
+        <div class="card__body">
+          <h3>Профитроли — 250 ₽</h3>
+          <p class="muted">Мини-шарики из заварного теста, щедро наполненные кремом.</p>
+          <p class="small">Состав: заварное тесто, крем (ваниль/шоколад).</p>
+          <button class="btn add" type="button">Добавить в корзину</button>
+        </div>
+      </article>
+
+      <article class="card" data-category="desserts" data-id="brownie" data-name="Брауни" data-price="280">
+        <div class="slide" data-label="Брауни"><img src="img/brauni.jpg" width="559" height="537" loading="lazy" decoding="async" alt="Брауни"></div>
+        <div class="card__body">
+          <h3>Брауни — 280 ₽</h3>
+          <p class="muted">Плотный шоколадный десерт с влажной серединкой.</p>
+          <p class="small">Состав: шоколад, масло, какао, яйца.</p>
+          <button class="btn add" type="button">Добавить в корзину</button>
+        </div>
+      </article>
+
+      <article class="card" data-category="desserts" data-id="muffins" data-name="Маффины" data-price="230">
+        <div class="slide" data-label="Маффины"><img src="img/maffin.jpg" width="922" height="867" loading="lazy" decoding="async" alt="Маффины"></div>
+        <div class="card__body">
+          <h3>Маффины — 230 ₽</h3>
+          <p class="muted">Воздушные кексы — ванильные, ягодные или шоколадные.</p>
+          <p class="small">Состав: тесто, добавки по вкусу.</p>
+          <button class="btn add" type="button">Добавить в корзину</button>
+        </div>
+      </article>
+
+      <article class="card" data-category="desserts" data-id="croissants" data-name="Круассаны" data-price="240">
+        <div class="slide" data-label="Круассаны"><img src="img/cruassan.jpg" width="719" height="632" loading="lazy" decoding="async" alt="Круассаны"></div>
+        <div class="card__body">
+          <h3>Круассаны — 240 ₽</h3>
+          <p class="muted">Слоистые, хрустящие — классика к утреннему кофе.</p>
+          <p class="small">Состав: слоёное тесто, масло; возможны начинки.</p>
+          <button class="btn add" type="button">Добавить в корзину</button>
+        </div>
+      </article>
+
+      <!-- ****** ЗАВТРАКИ ****** -->
+      <article class="card" data-category="breakfast" data-id="syrniki" data-name="Сырники" data-price="360">
+        <div class="slide" data-label="Сырники"><img src="img/syrniki.jpg" width="1080" height="1174" loading="lazy" decoding="async" alt="Сырники"></div>
+        <div class="card__body">
+          <h3>Сырники — 360 ₽</h3>
+          <p class="muted">Золотистые, нежные, подаются со сметаной или джемом.</p>
+          <p class="small">Состав: творог, мука, яйцо, сахар; подача: сметана/джем.</p>
+          <button class="btn add" type="button">Добавить в корзину</button>
+        </div>
+      </article>
+
+      <article class="card" data-category="breakfast" data-id="porridge" data-name="Каша" data-price="280">
+        <div class="slide" data-label="Каша"><img src="img/kasha.jpg" width="1067" height="939" loading="lazy" decoding="async" alt="Каша"></div>
+        <div class="card__body">
+          <h3>Каша — 280 ₽</h3>
+          <p class="muted">Тёплый старт дня: овсяная или рисовая, с топпингами.</p>
+          <p class="small">Состав: крупа, молоко/вода; топпинги: ягоды, мёд, орехи.</p>
+          <button class="btn add" type="button">Добавить в корзину</button>
+        </div>
+      </article>
+
+      <article class="card" data-category="breakfast" data-id="avocado-toast" data-name="Авокадо тост" data-price="420">
+        <div class="slide" data-label="Авокадо тост"><img src="img/avocado.jpg" width="994" height="903" loading="lazy" decoding="async" alt="Авокадо тост"></div>
+        <div class="card__body">
+          <h3>Авокадо тост — 420 ₽</h3>
+          <p class="muted">Зерновой хлеб, спелый авокадо, лимон и хлопья перца.</p>
+          <p class="small">Состав: хлеб, авокадо, лимон, оливковое масло, специи.</p>
+          <button class="btn add" type="button">Добавить в корзину</button>
+        </div>
+      </article>
+
+      <article class="card" data-category="breakfast" data-id="pancakes" data-name="Панкейки" data-price="350">
+        <div class="slide" data-label="Панкейки"><img src="img/pancake.jpg" width="994" height="1154" loading="lazy" decoding="async" alt="Панкейки"></div>
+        <div class="card__body">
+          <h3>Панкейки — 350 ₽</h3>
+          <p class="muted">Пышные и ароматные, подаются с сиропом/ягодами.</p>
+          <p class="small">Состав: тесто для панкейков, масло, топпинги по выбору.</p>
+          <button class="btn add" type="button">Добавить в корзину</button>
+        </div>
+      </article>
+
+      <article class="card" data-category="breakfast" data-id="yogurt-berries" data-name="Йогурт с ягодами" data-price="300">
+        <div class="slide" data-label="Йогурт с ягодами"><img src="img/jogurt.jpg" width="830" height="727" loading="lazy" decoding="async" alt="Йогурт с ягодами"></div>
+        <div class="card__body">
+          <h3>Йогурт с ягодами — 300 ₽</h3>
+          <p class="muted">Натуральный йогурт с сезонными ягодами и гранолой.</p>
+          <p class="small">Состав: йогурт, ягоды, гранола/мёд по желанию.</p>
+          <button class="btn add" type="button">Добавить в корзину</button>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__bottom">© 2025 Bird Coffee</div>
+  </footer>
+
+  <button type="button" class="scroll-top" id="scrollTopBtn" aria-label="Вернуться наверх">↑</button>
+
+  <script src="js/main.js" defer></script>
+  <script src="js/menu.js" defer></script>
+</body>
+</html>

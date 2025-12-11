@@ -1,0 +1,277 @@
+/* ==============================
+   CART PAGE • Bird Coffee
+   С шагами и анимацией qty
+   ============================== */
+
+.cart-page {
+  padding: 32px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== Шаги (этапы оформления) ===== */
+.steps {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 26px;
+}
+
+.step {
+  position: relative;
+  font-size: 15px;
+  color: var(--brown);
+  opacity: 0.55;
+  padding-bottom: 4px;
+  cursor: default;
+}
+
+.step.is-active {
+  opacity: 1;
+  font-weight: 700;
+}
+
+.step.is-active::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 36px;
+  height: 2px;
+  background: var(--green);
+  transform: translateX(-50%);
+  border-radius: 999px;
+}
+
+/* ===== Список товаров ===== */
+.cart-list {
+  display: grid;
+  gap: 14px;
+  margin: 10px 0 22px;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 1fr auto auto auto 36px;
+  gap: 12px;
+  align-items: center;
+  background: var(--milk);
+  padding: 14px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.23s ease, box-shadow 0.23s ease;
+}
+
+.item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.14);
+}
+
+.item h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* ===== Количество + / - ===== */
+.qty {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Микроанимация кнопок */
+.qty button {
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  border: 0;
+  background: var(--green);
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.qty button:hover {
+  background: #3e5647;
+  box-shadow: 0 0 0 2px rgba(78, 105, 92, 0.4);
+}
+
+/* Щелчковая подпрыгивающая анимация */
+.qty button:active {
+  transform: scale(0.9);
+}
+
+.remove {
+  background: #b84c4c;
+  color: #fff;
+  border: 0;
+  border-radius: 10px;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  transition: background-color 0.22s ease, transform 0.18s ease;
+}
+
+.remove:hover {
+  background: #9a3c3c;
+}
+
+.remove:active {
+  transform: scale(0.9);
+}
+
+.price,
+.sum {
+  font-weight: 700;
+  color: var(--brown);
+  font-size: 16px;
+}
+
+/* ===== ИТОГ ===== */
+.cart-summary {
+  margin: 26px 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.total-line {
+  background: var(--milk);
+  padding: 14px 18px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* ===== ФОРМА ЗАКАЗА ===== */
+.order {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.order__title {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.order__title h2 {
+  margin-bottom: 0;
+}
+
+.order__form {
+  display: grid;
+  gap: 14px;
+  background: var(--milk);
+  padding: 28px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 560px; /* центрированная премиум-ширина */
+  margin: 0 auto;
+  text-align: left;
+}
+
+.order__form input,
+.order__form textarea {
+  width: 100%;
+  border: 1px solid var(--border-soft);
+  background: var(--surface);
+  padding: 14px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  transition: border-color 0.22s ease, box-shadow 0.22s ease;
+  color: var(--ink);
+}
+
+.order__form input:focus,
+.order__form textarea:focus {
+  outline: none;
+  border-color: var(--green);
+  box-shadow: 0 0 0 2px rgba(46,125,50,0.12);
+}
+
+.order__form .is-invalid {
+  border-color: #c74747;
+  box-shadow: 0 0 0 2px rgba(199,71,71,0.25);
+}
+
+.order__form fieldset {
+  border: 1px dashed var(--border-soft);
+  padding: 16px;
+  border-radius: 12px;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.order__form legend {
+  padding: 0 8px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+/* ===== Mobile адаптация ===== */
+@media (max-width: 768px) {
+  .item {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "title title"
+      "price qty"
+      "sum remove";
+    gap: 8px;
+    padding: 16px;
+  }
+
+  .item h3 { grid-area: title; }
+  .price   { grid-area: price; }
+  .qty     { grid-area: qty; justify-self: end; }
+  .sum     { grid-area: sum; }
+  .remove  { grid-area: remove; justify-self: end; }
+
+  .steps { flex-wrap: wrap; gap: 14px; }
+  .order__form { padding: 20px; max-width: 90%; }
+  .order__form label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .order__form fieldset {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .order__title h2 {
+    font-size: 1.6rem;
+  }
+  .cart-page h1 {
+    text-align: center;
+  }
+}
+
+@media (max-width: 520px) {
+  .cart-summary {
+    justify-content: center;
+  }
+  .total-line {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .order__form {
+    padding: 18px 16px;
+  }
+  .order__form button {
+    width: 100%;
+    justify-content: center;
+  }
+  .back-btn {
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+}

@@ -1,0 +1,226 @@
+﻿<!doctype html>
+<html lang="ru" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bird — авторская кофейня на севере Москвы</title>
+  <meta name="description" content="Bird Coffee — уютная кофейня на Кронштадском бульваре: спешелти напитки, завтраки целый день, десерты и сезонные новинки." />
+  <meta name="theme-color" content="#5f6a4f" />
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="img/icon-192.png" sizes="192x192" />
+  <link rel="apple-touch-icon" href="img/icon-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/home.css" />
+</head>
+<body>
+  <a href="#mainContent" class="skip-link">Перейти к содержимому</a>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header__inner">
+      <a class="logo" href="index.html" aria-label="Bird Coffee">BIRD</a>
+      <button type="button" class="burger" id="menuToggle" aria-label="Открыть навигацию" aria-controls="siteNav" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" id="siteNav" aria-label="Основная навигация">
+        <a href="#home" class="nav-link is-active" aria-current="page">Главная</a>
+        <a href="menu.html" class="nav-link">Меню</a>
+        <a href="#about" class="nav-link">О нас</a>
+        <a href="#gallery" class="nav-link">Галерея</a>
+        <a href="#reviews" class="nav-link">Отзывы</a>
+        <a href="#contacts" class="nav-link">Контакты</a>
+        <a href="cart.html" class="nav-link">Корзина <span id="cartCount" class="badge">0</span></a>
+        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Переключить тему" aria-pressed="false">
+          <span class="theme-toggle__icon" aria-hidden="true"></span>
+        </button>
+
+      </nav>
+    </div>
+  </header>
+  <div class="menu-overlay" id="menuOverlay" aria-hidden="true"></div>
+
+  <main id="mainContent">
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero__content container">
+        <h1>Bird: Твой кофе, твоя атмосфера</h1>
+        <p>Городской ритм встречается с тёплым ароматом зерна: уютное пространство, забота о деталях и вкусы, к которым хочется возвращаться.</p>
+        <a class="btn btn-primary" href="menu.html">Заказать сейчас</a>
+      </div>
+    </section>
+
+  <!-- ABOUT -->
+  <section class="about container" id="about">
+    <div class="about__grid">
+        <div class="slide" data-label="Фото кофейни">
+          <img src="img/2.jpg" width="1199" height="1225" loading="lazy" decoding="async" alt="Интерьер кофейни Bird Coffee">
+        </div>
+      <div class="about__text">
+        <h2>О кофейне</h2>
+        <p>Bird — это место, где кофе обретает характер. Мы выбираем зерно тщательно, обжариваем бережно и подаём с вниманием к вашему настроению. В нашей философии — простота, качество и комфорт. Мы ориентируемся на сезонность и прозрачность происхождения ингредиентов, используем устойчивые практики и работаем с локальными поставщиками.</p>
+        <p>Меню сочетает проверенную классику и авторские позиции, а интерьер — мягкие оттенки, натуральные фактуры и приглушённый свет. Здесь удобно встретиться с друзьями, поработать за чашкой латте или забежать за быстрым эспрессо навынос. Для вас — быстрая доставка, программа лояльности и регулярные новинки. Мы верим, что внимание к мелочам создаёт большие впечатления.</p>
+        <p class="tagline">Создаём уют и вдохновение через лучший кофе</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery container" id="gallery">
+    <h2>Галерея</h2>
+      <div class="slider" id="homeSlider" aria-label="Галерея интерьера и блюд">
+        <button class="slider__btn" data-dir="prev" aria-label="Назад" type="button">&#10094;</button>
+        <div class="slider__viewport">
+          <div class="slider__track">
+            <div class="slide" data-label="Фото 1"><img src="img/3.jpg" width="1079" height="554" loading="lazy" decoding="async" alt="Барная стойка с зерном"></div>
+            <div class="slide" data-label="Фото 2"><img src="img/4.jpg" width="750" height="458" loading="lazy" decoding="async" alt="Авторский напиток с цитрусом"></div>
+            <div class="slide" data-label="Фото 3"><img src="img/5.jpg" width="1199" height="599" loading="lazy" decoding="async" alt="Завтрак из меню Bird"></div>
+            <div class="slide" data-label="Фото 4"><img src="img/6.jpg" width="933" height="547" loading="lazy" decoding="async" alt="Десерты в витрине"></div>
+            <div class="slide" data-label="Фото 5"><img src="img/7.jpg" width="750" height="416" loading="lazy" decoding="async" alt="Уютный зал кофейни"></div>
+          </div>
+        </div>
+        <button class="slider__btn" data-dir="next" aria-label="Вперёд" type="button">&#10095;</button>
+      </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="container">
+      <h2>Почему выбирают Bird</h2>
+      <div class="features-container">
+        <article class="feature">
+          <span class="feature__icon" aria-hidden="true">☕</span>
+          <h3>Спешелти обжарка</h3>
+          <p>Готовим эспрессо и фильтр на зёрнах с оценкой 84+ балла, регулярно проводим каппинги и рассказываем гостям о вкусовых профилях.</p>
+        </article>
+        <article class="feature">
+          <span class="feature__icon" aria-hidden="true">🛋️</span>
+          <h3>Живой интерьер</h3>
+          <p>Мягкие диваны, тёплый свет и проигрыватель винила делают зал идеальным для неспешных встреч и работы за ноутбуком.</p>
+        </article>
+        <article class="feature">
+          <span class="feature__icon" aria-hidden="true">🚚</span>
+          <h3>Быстрая доставка</h3>
+          <p>Собственная курьерская служба довозит напитки за 20 минут в радиусе пяти километров и сохраняет нужную температуру.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="container">
+    <div class="reviews__grid">
+      <form class="review-form" id="reviewForm" novalidate>
+        <h2>Оставьте ваш отзыв!</h2>
+        <div class="review-form__row">
+          <label class="input-field">
+            <span>Ваше имя</span>
+            <input type="text" name="name" placeholder="Введите имя" autocomplete="name" required>
+          </label>
+          <label class="input-field">
+            <span>Ваш Email</span>
+            <input type="email" name="email" placeholder="Введите email" autocomplete="email" required>
+          </label>
+        </div>
+        <div class="rating-field">
+          <span>Оценка:</span>
+          <div class="rating-input" role="radiogroup" aria-label="Оценка в звёздах">
+            <input type="radio" id="star5" name="rating" value="5" required>
+            <label for="star5" aria-label="5 звёзд">★</label>
+            <input type="radio" id="star4" name="rating" value="4">
+            <label for="star4" aria-label="4 звезды">★</label>
+            <input type="radio" id="star3" name="rating" value="3">
+            <label for="star3" aria-label="3 звезды">★</label>
+            <input type="radio" id="star2" name="rating" value="2">
+            <label for="star2" aria-label="2 звезды">★</label>
+            <input type="radio" id="star1" name="rating" value="1">
+            <label for="star1" aria-label="1 звезда">★</label>
+          </div>
+        </div>
+        <label class="input-field">
+          <span>Ваш отзыв:</span>
+          <textarea name="message" rows="5" placeholder="Впишите отзыв в данное поле" autocomplete="off" required></textarea>
+        </label>
+        <div class="review-form__actions">
+          <label class="btn-attach">
+            <input type="file" name="photo" accept="image/*">
+            <span aria-hidden="true">📎</span>
+            Прикрепить фото
+          </label>
+          <button type="submit" class="btn-submit">Отправить</button>
+        </div>
+        <p id="reviewMsg" class="form-msg" role="status" aria-live="polite"></p>
+      </form>
+      <article class="testimonial">
+        <div class="testimonial__header">
+          <svg class="testimonial__avatar" viewBox="0 0 160 160" role="img" aria-label="Портрет Анны Крыловой" focusable="false">
+            <circle cx="80" cy="80" r="78" fill="#f3d8c2" />
+            <path d="M24 140c4-40 30-66 56-66s52 26 56 66" fill="#c68858" />
+            <circle cx="80" cy="74" r="36" fill="#fce6d4" />
+            <path d="M26 74c6-32 26-52 54-52s48 20 54 52c-10-16-26-30-45-30-6 6-13 9-19 9s-13-3-19-9c-19 0-35 14-45 30z" fill="#613a2f" />
+          </svg>
+          <div>
+            <h3>Анна Крылова</h3>
+            <div class="testimonial__rating" aria-label="Оценка 5 из 5">
+              <span aria-hidden="true">★★★★★</span>
+            </div>
+          </div>
+        </div>
+        <p>Всегда захожу в Bird по дороге на работу — атмосфера невероятная. Кофе стабильно вкусный, бариста улыбчивые, а интерьер — просто уютнейшее место для утра. Обожаю ваш фильтр на овсяном молоке и маленькие сезонные десерты. Спасибо, что держите такой уровень!</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+  <!-- SUBSCRIBE -->
+  <section class="subscribe">
+    <div class="container">
+      <h2>Подпишитесь на новости и сезонные новинки</h2>
+      <form id="subscribeForm" class="subscribe__form" novalidate>
+        <input type="email" id="subscribeEmail" placeholder="Ваш email" aria-label="Email" autocomplete="email" required>
+        <button type="submit" class="btn btn-secondary">Подписаться</button>
+      </form>
+      <p id="subscribeMsg" class="form-msg" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contacts">
+    <div class="container footer__grid">
+      <div>
+        <h3>Контакты</h3>
+        <p>Адрес: Кронштадский бульвар 37Бс1</p>
+        <p>Телефон: +7 (900) 000-00-00</p>
+        <p>Часы: Пн–Вс 08:00–22:00</p>
+      </div>
+      <div class="map">
+        <iframe
+          src="https://yandex.ru/map-widget/v1/?text=%D0%9A%D1%80%D0%BE%D0%BD%D1%88%D1%82%D0%B0%D0%B4%D1%81%D0%BA%D0%B8%D0%B9%20%D0%B1%D1%83%D0%BB%D1%8C%D0%B2%D0%B0%D1%80%2037%D0%91%D1%811&z=17&lang=ru_RU"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Карта: Кронштадский бульвар 37Бс1"
+            aria-label="Карта с адресом кофейни"
+            width="600"
+            height="260">
+        </iframe>
+      </div>
+    </div>
+  <div class="container footer__bottom">© 2025 Bird Coffee</div>
+</footer>
+
+  <button type="button" class="scroll-top" id="scrollTopBtn" aria-label="Вернуться наверх">↑</button>
+
+  <!-- JS -->
+  <script src="js/main.js" defer></script>
+  <script src="js/home.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ru" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bird — Корзина</title>
+  <meta name="description" content="Корзина заказа Bird: редактируйте позиции и оформляйте доставку или самовывоз." />
+  <meta name="theme-color" content="#5f6a4f" />
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="img/icon-192.png" sizes="192x192" />
+  <link rel="apple-touch-icon" href="img/icon-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/cart.css" />
+</head>
+<body>
+  <a href="#mainContent" class="skip-link">Перейти к содержимому</a>
+  <header class="site-header">
+    <div class="container header__inner">
+      <a class="logo" href="index.html">BIRD</a>
+      <button type="button" class="burger" id="menuToggle" aria-label="Открыть навигацию" aria-controls="siteNav" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" id="siteNav" aria-label="Основная навигация">
+        <a href="index.html" class="nav-link">Главная</a>
+        <a href="menu.html" class="nav-link">Меню</a>
+        <a href="cart.html" class="nav-link is-active" aria-current="page">Корзина <span id="cartCount" class="badge">0</span></a>
+        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Переключить тему" aria-pressed="false">
+          <span class="theme-toggle__icon" aria-hidden="true"></span>
+        </button>
+
+      </nav>
+    </div>
+  </header>
+  <div class="menu-overlay" id="menuOverlay" aria-hidden="true"></div>
+
+  <main id="mainContent" class="container cart-page">
+    <a href="index.html" class="back-btn">← На главную</a>
+    <h1>Корзина</h1>
+
+    <!-- СПИСОК ТОВАРОВ -->
+    <div id="cartList" class="cart-list" aria-live="polite"></div>
+
+    <!-- ИТОГИ -->
+    <aside class="cart-summary">
+      <div class="total-line">
+        <span>Итого:</span>
+        <strong><span id="cartTotal">0</span> ₽</strong>
+      </div>
+    </aside>
+
+    <!-- ФОРМА ЗАКАЗА -->
+    <section class="order">
+      <div class="order__title">
+        <h2>Оформление заказа</h2>
+      </div>
+      <form id="orderForm" class="order__form" novalidate>
+        <label>
+          Имя
+          <input type="text" name="name" placeholder="Ваше имя" autocomplete="name" required>
+        </label>
+        <label>
+          Телефон
+          <input type="tel" name="phone" placeholder="+7..." autocomplete="tel" required>
+        </label>
+        <label>
+          Адрес доставки
+          <textarea name="address" placeholder="Город, улица, дом, квартира" rows="3" autocomplete="street-address" required></textarea>
+        </label>
+
+        <fieldset>
+          <legend>Получение</legend>
+          <label><input type="radio" name="delivery" value="delivery" checked> Доставка</label>
+          <label><input type="radio" name="delivery" value="pickup"> Самовывоз</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Оплата</legend>
+          <label><input type="radio" name="payment" value="cash" checked> Наличными</label>
+          <label><input type="radio" name="payment" value="card"> Картой онлайн</label>
+        </fieldset>
+
+        <button type="submit" class="btn btn-primary">Оформить заказ</button>
+        <p id="orderMsg" class="form-msg" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__bottom">© 2025 Bird Coffee</div>
+  </footer>
+
+  <button type="button" class="scroll-top" id="scrollTopBtn" aria-label="Вернуться наверх">↑</button>
+
+  <script src="js/main.js" defer></script>
+  <script src="js/cart.js" defer></script>
+</body>
+</html>

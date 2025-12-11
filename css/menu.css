@@ -1,0 +1,150 @@
+.menu-page {
+  padding: 32px 0 20px;
+  text-align: center;
+}
+
+.menu-page h1 {
+  margin-bottom: 18px;
+}
+
+/* ===== ФИЛЬТРЫ ===== */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 12px 0 26px;
+}
+
+.filter {
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--border-soft);
+  background: var(--surface);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.filter.is-active,
+.filter:hover {
+  background: var(--green);
+  color: #fff;
+  border-color: var(--green);
+}
+
+/* ===== СЕТКА ===== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  justify-items: center;
+}
+
+/* ===== КАРТОЧКА ===== */
+.card {
+  background: var(--milk);
+  border-radius: var(--radius);
+  padding: 12px;
+  width: 100%;
+  max-width: 300px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  transition: transform .25s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+/* ===== КОМПАКТНАЯ КАРТИНКА ===== */
+.card .slide img,
+.card__media img,
+.card__media,
+.slide img {
+  width: 100%;
+  height: 150px;          /* <-- Главное: маленькая фиксированная высота */
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* если используется .img-placeholder */
+.img-placeholder {
+  height: 150px;
+  width: 100%;
+  background: #d8d3c9;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brown);
+  font-size: 14px;
+}
+
+/* ===== ТЕКСТ И КНОПКА ===== */
+.card__body {
+  padding-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.card h3 {
+  font-size: 1.05rem;
+  color: var(--brown);
+}
+
+.muted {
+  font-size: .9rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.small {
+  font-size: .83rem;
+  color: var(--muted);
+}
+
+.card .add {
+  margin-top: 10px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: var(--brown);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: .9rem;
+  transition: .2s ease;
+}
+
+.card .add:hover {
+  background: #574a3f;
+}
+
+/* ===== АДАПТИВ ===== */
+@media (max-width: 980px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .grid { grid-template-columns: 1fr; }
+  .card { max-width: 360px; }
+}
+
+@media (max-width: 480px) {
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .filter {
+    width: 100%;
+    text-align: center;
+  }
+  .menu-page h1 {
+    font-size: 2rem;
+  }
+}
